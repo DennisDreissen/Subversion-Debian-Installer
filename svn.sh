@@ -34,7 +34,7 @@ if [[ -n $(which svn) ]];  then
                 echo "Give the new repository a name."
                 read -p "Name: " -e -i '' NAME
 
-                if [ -d "/var/svn/repository/$NAME" ]; then
+                if [[ -d "/var/svn/repository/$NAME" ]]; then
                     echo "There's already a repository with this name. Aborting..."
                     exit
                 fi
@@ -49,7 +49,7 @@ if [[ -n $(which svn) ]];  then
                 echo "Enter the name of the repository you want to delete."
                 read -p "Name: " -e -i '' NAME
 
-                if [ ! -d "/var/svn/repository/$NAME" ]; then
+                if [[ ! -d "/var/svn/repository/$NAME" ]]; then
                     echo "There's no repository with this name. Aborting..."
                     exit
                 fi
@@ -64,7 +64,7 @@ if [[ -n $(which svn) ]];  then
                 echo "Give your user a unique username."
                 read -p "Username: " -e -i '' UNAME
 
-                if [ -d "/var/svn/users/$UNAME.passwd" ]; then
+                if [[ -d "/var/svn/users/$UNAME.passwd" ]]; then
                     echo "There's already a user with this username. Aborting..."
                     exit
                 fi
@@ -73,7 +73,7 @@ if [[ -n $(which svn) ]];  then
                 echo "Which repository do you want to assign to this user?"
                 read -p "Repository name: " -e -i '' RNAME
 
-                if [ ! -d "/var/svn/repository/$RNAME" ]; then
+                if [[ ! -d "/var/svn/repository/$RNAME" ]]; then
                     echo ""
                     echo "There's no repository with this name."
                     read -p "Do you want to create it [Y/n]? " -e -i '' CREATE

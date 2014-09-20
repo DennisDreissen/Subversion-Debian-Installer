@@ -35,6 +35,7 @@ if [[ -n $(which svn) ]];  then
                 read -p "Name: " -e -i '' NAME
 
                 if [[ -d "/var/svn/repository/$NAME" ]]; then
+                    echo ""
                     echo "There's already a repository with this name. Aborting..."
                     exit
                 fi
@@ -50,6 +51,7 @@ if [[ -n $(which svn) ]];  then
                 read -p "Name: " -e -i '' NAME
 
                 if [[ ! -d "/var/svn/repository/$NAME" ]]; then
+                    echo ""
                     echo "There's no repository with this name. Aborting..."
                     exit
                 fi
@@ -65,6 +67,7 @@ if [[ -n $(which svn) ]];  then
                 read -p "Username: " -e -i '' UNAME
 
                 if [[ -d "/var/svn/users/$UNAME.passwd" ]]; then
+                    echo ""
                     echo "There's already a user with this username. Aborting..."
                     exit
                 fi
@@ -84,6 +87,7 @@ if [[ -n $(which svn) ]];  then
                         echo ""
                         echo "A new repository with the name $RNAME has been created."
                     else
+                        echo ""
                         echo "Aborting..."
                         exit
                     fi
